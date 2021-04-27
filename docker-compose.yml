@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  mysql.reciclae:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: reciclae123
+      MYSQL_USER: reciclae
+      MYSQL_PASSWORD: reciclae123
+      MYSQL_DATABASE: db_reciclae
+    volumes:
+      -  mysql.reciclae.monolito:/var/lib/mysql
+    networks:
+      - reciclae
+      
+networks:
+  reciclae:
+
+volumes:
+  mysql.reciclae.monolito:
